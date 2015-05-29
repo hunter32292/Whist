@@ -1,0 +1,21 @@
+@startuml
+[*] --> BeforeAll
+BeforeAll --> GameLoop : start game
+BeforeAll : setup game
+
+state GameLoop {
+  [*] --> BeforeEach
+  BeforeEach --> GameStage
+  GameStage --> AfterEach
+  AfterEach --> BeforeEach : next GameStage
+
+  BeforeEach: setup game stage
+  GameStage: game play logic
+  AfterEach: clean-up
+
+}
+
+GameLoop --> AfterAll : game stages exhausted
+AfterAll --> [*]
+AfterAll: clean-up game
+@enduml

@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <p class="lead">
+    <!-- TODO: Replace with a png image of a playing card -->
+    <h1><img src="images/Joker.png" alt="Whist Online"></h1>
+    a card game for two players
+  </p>
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon">@</span>
+    <input type="text"
+           class="form-control"
+           placeholder="{{randomName}}"
+           aira-describedby="username"
+           ng-model="human.name">
+    <span class="input-group-btn">
+      <a class="btn btn-primary" ng-click="setDefault()" ng-href="#/game">play whist</a>
+    </span>
+  </div>
+</div>
+<div class="row marketing">
+  <h4>Beginners Guide</h4>
+  <p>
+	Whist is a classic English trick-taking card game which was widely played in the 18th and 19th centuries. The game is has some very basic rules, which can be viewed on our <a ng-href="#/about">about page</a>.    
+  </p>
+
+  <h4>Rules</h4>
+  <p>
+	Use a standard 52 card deck, and distribute the cards as followers for a two player game. 10 cards per players hand, 8 face down in front of each player, and 8 face up on the cards in front of each player. Once the cards have been distributed, the player that did not deal may begin by selecting a card. After choosing a card and placing the card face up in front of each player, the dealer may select a card of the same suit. If the cards value is higher, the dealer takes that trick, if not the other player takes the trick. If the players choose one of the face up cards on top of the face down cards, they can flip the face down card and use it for play. 
+  </p>
+
+</div>

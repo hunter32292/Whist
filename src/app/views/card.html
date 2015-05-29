@@ -1,0 +1,51 @@
+<div ng-controller="CardCtrl" class="card col-md-2 col-sm-2" title="the {{card.getRank()}} of {{card.getSuit()}}">
+  <div ng-click="playCard(card)" class="panel panel-default {{active(card)}}">
+
+	<span ng-if=" card.isFaceDown()==false ">
+	
+	<span ng-if=" card.isADiamond() || card.isAHeart() ">
+    <div class="panel-body"  >
+		<span class="pull-left">
+			<span class="glyphicon redCard" aria-hidden="true" >{{card.getSuitSymbol()}}</span>
+			</span>
+		<span class="pull-right">
+			<span class="glyphicon redCard" aria-hidden="true" >{{card.getSuitSymbol()}}</span>
+		</span>
+	<br>
+		<div class="name redCard" >{{card.getRankShort()}}</div>
+    	<span class="pull-left">
+			<span class="glyphicon redCard" aria-hidden="true" >{{card.getSuitSymbol()}}</span>
+			</span>
+		<span class="pull-right">
+			<span class="glyphicon redCard" aria-hidden="true" >{{card.getSuitSymbol()}}</span>
+		</span>
+	</div>
+	</span>
+	<span ng-if=" card.isAClub() || card.isASpade() ">
+    <div class="panel-body"  >
+		<span class="pull-left">
+			<span class="glyphicon blackCard" aria-hidden="true">{{card.getSuitSymbol()}}</span>
+			</span>
+		<span class="pull-right">
+			<span class="glyphicon blackCard" aria-hidden="true">{{card.getSuitSymbol()}}</span>
+		</span>
+	<br>
+		<div class="name blackCard">{{card.getRankShort()}}</div>
+    	<span class="pull-left">
+			<span class="glyphicon blackCard" aria-hidden="true">{{card.getSuitSymbol()}}</span>
+			</span>
+		<span class="pull-right">
+			<span class="glyphicon blackCard" aria-hidden="true">{{card.getSuitSymbol()}}</span>
+		</span>
+	</div>
+	</span>
+
+	</span>
+
+	<span ng-if=" card.isFaceDown()==true ">
+    <div class="panel-body" style="visibility:hidden; height:54px; width:30;" >
+    </div>
+	</span>
+
+  </div>
+</div>

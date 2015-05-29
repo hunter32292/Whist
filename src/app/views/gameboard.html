@@ -1,0 +1,46 @@
+<div class="fixed" id="infobar">
+	<div id="child" >
+		<p class="text-danger lead">computer tricks: {{game.players.computer.tricks.length}}</p>
+		<p>
+		<ul class="listInfo">
+		  <li>score: human {{game.players.human.score}}, computer {{game.players.computer.score}}</li>
+		  <li>game type: {{game.type}}</li>
+		  <li ng-hide="game.declarer === null">declarer: {{game.declarer.name}}</li>
+		  <li>dealer: {{game.dealer.name}}</li>
+		</ul>
+		</p>
+		<p class="text-info lead">human tricks: {{game.players.human.tricks.length}}</p>
+	</div>
+</div>
+<div class="container">
+	<div class="row hand">
+	  <card-collection model="game.players.computer.hand"></card-collection>
+	</div>
+
+	<div class="row hand pile" id="cardpile" ng-repeat="chunk in computerPileChunks">
+	  <card-collection ng-repeat="pile in chunk" model="pile"></card-collection>
+	</div>
+
+	<!-- beginning of trick pile -->
+	<div class="row trickPile">
+		<p class="text-left"><strong>lead suit:</strong> {{game.trick.suit}}</p>
+	  <card-collection model="game.trick.cards"></card-collection>
+		<div class="trickInfo text-right">
+			<div ng-show="game.declarer === null">
+			  <button ng-click="game.bid(game.currentPlayer)" type="button" class="btn btn-info">Bid</button>
+			  <button ng-click="game.pass(game.currentPlayer)" type="button" class="btn btn-default">Pass</button>
+			</div>
+		</div>
+		<p class="text-right"><strong>Bid for:</strong> {{ game.currentPlayer.name }}</p>
+	</div>
+	<!-- end of trick pile -->
+	
+	<div class="row hand pile" id="cardpile" ng-repeat="chunk in humanPileChunks">
+	  <card-collection ng-repeat="pile in chunk" model="pile"></card-collection>
+	</div>
+	
+	<div class="row hand" >
+	  <card-collection model="game.players.human.hand"></card-collection>
+	</div>
+
+</div>

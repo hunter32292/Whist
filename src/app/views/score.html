@@ -1,0 +1,27 @@
+<h1>Recent Scores</h1>
+
+<div ng-app="angularWhistApp" ng-controller="ScoreCtrl">
+ <table class="table table-striped">
+      <caption>I belive in Harvy Dent.</caption>
+      <thead>
+        <tr>
+          <th>Game</th>
+          <th>Player 1</th>
+          <th>Score</th>
+          <th>Player 2</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+	 <tr ng-repeat="game in list">
+	    <th scope="row">{{ $index+1}}</th>
+	    <td>{{ game[0].name }}</td>
+            <td>{{ game[0].score }}</td>
+            <td>{{ game[1].name }}</td>
+            <td>{{ game[1].score }}</td>
+
+         </tr>
+      </tbody>
+    </table>
+</div>
+
